@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Varsha Shree!</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="landing">
+    <h1 class="glow">Hey Varsha Shree! 💖</h1>
+    <p>Click the button to open your special surprise 🎁</p>
+    <button id="startBtn">Start</button>
+  </div>
+
+  <div id="container">
+    <h1 class="glow">🎉 Happy Birthday Varsha Shree 🎉</h1>
+
+    <div class="cake" id="cake" title="Click the cake for a surprise!">
+      <div class="candles"></div>
+      <div class="layer layer-bottom"></div>
+      <div class="layer layer-middle"></div>
+      <div class="layer layer-top"></div>
+    </div>
+
+    <p id="secretMsg" class="hidden"></p>
+
+    <!-- Balloons -->
+    <div class="balloon" style="left: 10%"></div>
+    <div class="balloon" style="left: 30%"></div>
+    <div class="balloon" style="left: 50%"></div>
+    <div class="balloon" style="left: 70%"></div>
+    <div class="balloon" style="left: 90%"></div>
+  </div>
+
+  <audio id="bdaySong" autoplay loop>
+  <source src="song.mp3" type="audio/mp3">
+</audio>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

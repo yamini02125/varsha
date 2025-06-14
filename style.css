@@ -1,0 +1,208 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle, #a770ef, #5f27cd);
+  font-family: 'Comic Sans MS', cursive;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+.glow {
+  text-shadow: 0 0 10px #fff, 0 0 20px #c084fc, 0 0 30px #9d4edd;
+}
+
+#landing {
+  margin-top: 25vh;
+}
+
+#startBtn {
+  padding: 1em 2em;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 30px;
+  background: #a259ff;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+#startBtn:hover {
+  background: #7b2cbf;
+}
+
+#container {
+  display: none;
+  margin-top: 5vh;
+  position: relative;
+}
+
+.cake {
+  width: 120px;
+  margin: 20px auto;
+  cursor: pointer;
+  position: relative;
+  animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.layer {
+  width: 100%;
+  height: 30px;
+  border-radius: 10px;
+  margin-top: -5px;
+}
+
+.layer-bottom { background: #9c89b8; }
+.layer-middle { background: #c084fc; }
+.layer-top    { background: #e0aaff; }
+
+.candles {
+  width: 10px;
+  height: 40px;
+  background: #ff99c8;
+  margin: auto;
+  margin-bottom: -15px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.candles::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background: yellow;
+  border-radius: 50%;
+  position: absolute;
+  top: -15px;
+  left: -1px;
+  animation: flicker 1s infinite;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+
+.hidden {
+  display: none;
+}
+
+.reveal {
+  display: block;
+  font-size: 1.2rem;
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(128, 0, 128, 0.4);
+  animation: fadeIn 2s ease-in-out;
+  white-space: pre-wrap; /* Keeps new lines */
+  text-align: center;
+  margin-top: 20px;
+  max-width: 90%;
+  margin-inline: auto;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+
+
+
+/* Balloons */
+.balloon {
+  position: absolute;
+  bottom: -100px;
+  width: 60px;
+  height: 80px;
+  background-color: pink;
+  border-radius: 50%;
+  animation: float 8s linear infinite;
+}
+
+.balloon:nth-child(3) { background-color: #f3c4fb; animation-delay: 0s; }
+.balloon:nth-child(4) { background-color: #e0aaff; animation-delay: 1s; }
+.balloon:nth-child(5) { background-color: #b388eb; animation-delay: 2s; }
+.balloon:nth-child(6) { background-color: #c8b6ff; animation-delay: 3s; }
+.balloon:nth-child(7) { background-color: #a770ef; animation-delay: 4s; }
+
+@keyframes float {
+  0% { bottom: -100px; transform: translateX(0); }
+  50% { transform: translateX(30px); }
+  100% { bottom: 110vh; transform: translateX(-30px); }
+}
+
+/* Flying hearts */
+.heart {
+  width: 20px;
+  height: 20px;
+  background-color: pink;
+  position: absolute;
+  bottom: 0;
+  transform: rotate(45deg);
+  animation: flyUp 10s linear infinite;
+  opacity: 0.8;
+}
+
+.heart::before,
+.heart::after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-color: pink;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: -10px;
+  top: 0;
+}
+
+@keyframes flyUp {
+  0% { transform: translateY(0) rotate(45deg); opacity: 0.8; }
+  100% { transform: translateY(-100vh) rotate(45deg); opacity: 0; }
+}
+
+/* Glitter */
+.glitter {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 6px white;
+  animation: glitterAnim 3s linear infinite;
+}
+
+@keyframes glitterAnim {
+  0% { opacity: 0; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 0; transform: scale(0.8); }
+}
+
+/* Stars background */
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('https://raw.githubusercontent.com/VincentGarreau/particles.js/master/demo/media/star.png') repeat;
+  opacity: 0.03;
+  z-index: 0;
+  pointer-events: none;
+}
